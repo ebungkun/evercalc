@@ -4,7 +4,7 @@
   let crystalTotal = 0;
 </script>
 
-<div class="container">
+<div class="container" style="max-width:640px; margin-top: 12px;">
   <h1>엡소 레벨 계산기 (베타)</h1>
   <ul>
     <li>골드, 마나 더스트는 무시하고 마나 크리스탈만 고려함</li>
