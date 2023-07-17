@@ -2,7 +2,7 @@
   export let crystalTotal;
   import { levelToCrystal } from "$lib/utils";
 
-  let inputLevels = [1, 1, 1, 1, 1];
+  let inputLevels = Array(5).fill(null);
   let fillvalue = 1;
 
   $: crystalTotal = inputLevels.map(levelToCrystal).reduce((x, y) => x + y, 0);
@@ -11,17 +11,27 @@
 <article>
   <header>현재 레벨 입력</header>
   <div class="grid">
-    {#each inputLevels as level, i}
-      <div>
-        <label
-          >정령{i + 1}
-          <input type="number" min="1" max="500" step="1" bind:value={level} />
-        </label>
-      </div>
-    {/each}
+    <form>
+      {#each inputLevels as level, i}
+        <div>
+          <label
+            >정령{i + 1}
+            <input
+              type="number"
+              min="1"
+              max="500"
+              step="1"
+              required
+              bind:value={level}
+            />
+          </label>
+        </div>
+      {/each}
+      <button style:visibility="hidden" />
+    </form>
     <form>
       <label>
-        채우기
+        채울 값
         <input type="number" bind:value={fillvalue} />
       </label>
       <button
