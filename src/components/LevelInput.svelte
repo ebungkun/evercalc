@@ -3,7 +3,7 @@
   import { levelToCrystal } from "$lib/utils";
 
   let inputLevels = Array(5).fill(null);
-  let fillvalue = 1;
+  let fillvalue = null;
 
   $: crystalTotal = inputLevels.map(levelToCrystal).reduce((x, y) => x + y, 0);
 </script>
@@ -32,7 +32,7 @@
     <form>
       <label>
         채울 값
-        <input type="number" bind:value={fillvalue} />
+        <input type="number" min="1" max="500" bind:value={fillvalue} />
       </label>
       <button
         class="outline"
