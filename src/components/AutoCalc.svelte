@@ -2,10 +2,10 @@
   export let crystalTotal;
   import { crystalToLevel, levelToCrystal } from "$lib/utils";
 
-  let minLevel = 180;
   let tankUpStep = 1;
 
   $: maxAvgLevel = crystalToLevel(Math.floor(crystalTotal / 5) + 1);
+  $: minLevel = maxAvgLevel - 40;
 
   $: avgLevels = [
     40, 60, 80, 100, 120, 140, 160, 180, 200, 211, 221, 231, 241, 251, 261, 271,
