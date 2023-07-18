@@ -4,7 +4,7 @@
 
   let tankUpStep = 1;
 
-  $: maxAvgLevel = crystalToLevel(Math.floor(crystalTotal / 5) + 1);
+  $: maxAvgLevel = crystalToLevel(Math.floor(crystalTotal / 5));
   $: minLevel = maxAvgLevel - 40;
 
   $: avgLevels = [
@@ -56,6 +56,10 @@
     return crystalToLevel(budget);
   }
 </script>
+
+<article>
+  최대 평균 레벨: {maxAvgLevel}
+</article>
 
 <article>
   <header>딜러+평렙 세팅</header>
